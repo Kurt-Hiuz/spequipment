@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>spEquipment</title>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
-
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -16,19 +16,20 @@
             <div class="main">
                 <div class="headerMain">
                     <a href="#" class="headerLink">Главная</a>
-                    <a href="#" class="headerLink">Услуги</a>
-                    <a href="#" class="headerLink">Информация</a>
-                    <a href="#" class="headerLink">Контакты</a>
+                    <a href="#infoRent" class="headerLink">Услуги</a>
+                    <a href="#about" class="headerLink">Информация</a>
+                    <a href="#footer" class="headerLink">Контакты</a>
                 </div>
                 <div class="infoMain">
                     <h3>Аренда спецтехники в&nbsp;Москве</h3>
                     <p>Её использование характерно для ситуаций, где не справляется обычная техника или инструмент, где необходимо точное, детальное решение задачи с применением дополнительных функций и возможностей</p>
-                    <a href="#" class="call">Заказать звонок</a>
+                    <a href="#areUReady" class="call">Заказать звонок</a>
                 </div>
                 <div class="shape"></div>
             </div>
         </div>
         <div class="aboutWrapper">
+            <h2 id="about"></h2>
             <div class="about">
                 <div class="numbers">
                     <div class="headerNumbers">
@@ -54,7 +55,10 @@
                         </div>
                     </div>
                 </div>
+                
+                <h2 id="infoRent"></h2>
                 <div class="rent">
+
                     <div class="headerRent">
                         <p>У нас вы можете арендавать</p>
                         <div class="dash"></div>
@@ -118,6 +122,7 @@
             </div>
         </div>
         <div class="areUReadyWrapper">
+            <h2 id="areUReady"></h2>
             <div class="areUReady">
                 <div class="shapAreUReady"></div>
                 <div class="areUReadyHeader">
@@ -125,19 +130,80 @@
                     <p>Оставьте заявку прямо у нас на сайте. Мы свяжемся с вами в течение 20 минут для подтверждения заказа и изучения деталей.</p>
                 </div>
                 <div class="cardForm">
-                    <form action="#">
+                    <!-- <form> -->
                         <p>Ваше имя</p>
-                        <input type="text" name="" id="" placeholder="Введите ваше имя" required>
+                        <input type="text" name="" id="" placeholder="Введите ваше имя" >
                         <p>Номер телефона</p>
-                        <input type="tel" name="" id="" placeholder="+7(___) ___ - __ - __" required>
+                        <input type="tel" name="" id="" placeholder="+7(___) ___ - __ - __" >
                         <p>Комментарий к заказу</p>
-                        <input type="text" name="" id="">
-                    </form>
+                        <textarea name="" id="" rows="6" placeholder="Оставьте комментарий..."></textarea>
+                        <input type="submit" value="Оформить заявку" onclick="showMe()">
+                    <!-- </form> -->
                 </div>
-                <!-- <img src="images/RUReady.png" alt=""> -->
+                <img src="images/RUReady.png" alt="">
+            </div>
+            <div class="cardThanks" id="cardThanks">
+                <div class="exit" onclick="closeMe()"></div>
+                <h2>Спасибо!</h2>
+                <p>Ваша заявка отправлена.<br> Ожидайте звонка нашего специалиста!</p>
+                <div class="submitCard"></div>
             </div>
         </div>
-        <div class="footer"></div>
+        <div class="footerWrapper">
+            <h2 id="footer"></h2>
+            <div class="footer">
+                <p>АРЕНДА СПЕЦТЕХНИКИ</p>
+                <div class="telephones">
+                    <p>8 (499) 478 98 63</p>
+                    <p>8 (957) 972 65 10</p>
+                    <p>+7 (905) 786 54 24</p>
+                </div>
+                <div class="socialBlock">
+                    <div class="social vk">
+                        <a href="#" target="_blank"><i class="fa fa-vk fa-1x"></i></a>    
+                    </div>
+                    <div class="social instagram">
+                        <a href="#" target="_blank"><i class="fa fa-instagram fa-1x"></i></a>
+                    </div>
+                    <div class="social telegram">
+                        <a href="#" target="_blank"><i class="fa fa-paper-plane fa-1x"></i></a>
+                    </div>
+                    <div class="social whatsapp">
+                        <a href="#" target="_blank"><i class="fa fa-whatsapp fa-1x"></i></a>
+                    </div>
+                    <div class="social facebook">
+                        <a href="#" target="_blank"><i class="fa fa-facebook fa-1x"></i></a>    
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script>
+        function showMe(){
+            let cardThanks = document.getElementById("cardThanks");
+            cardThanks.style.opacity = "1";
+        }
+        function closeMe(){
+            let cardThanks = document.getElementById("cardThanks");
+            cardThanks.style.opacity = "0";
+        }
+
+        // Найти все ссылки начинающиеся на #
+        const anchors = document.querySelectorAll('a[href^="#"]')
+
+        // Цикл по всем ссылкам
+        for(let anchor of anchors) {
+            anchor.addEventListener("click", function(e) {
+                e.preventDefault() // Предотвратить стандартное поведение ссылок
+              // Атрибут href у ссылки, если его нет то перейти к body (наверх не плавно)
+                const goto = anchor.hasAttribute('href') ? anchor.getAttribute('href') : 'body'
+              // Плавная прокрутка до элемента с id = href у ссылки
+                document.querySelector(goto).scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                })
+            })
+        }
+    </script>
 </body>
 </html>

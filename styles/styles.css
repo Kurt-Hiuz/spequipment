@@ -4,6 +4,7 @@
     z-index: 2;
     font-family: 'Montserrat', sans-serif;
 }
+
 ::-webkit-scrollbar-button{
     background-image: url('');
     background-repeat: no-repeat;
@@ -112,10 +113,15 @@
     shape-outside: polygon(0 0, 50% 96%, 100% 0, 100% 100%, 0 100%);  /*Задание формы*/
     clip-path: polygon(0 0, 50% 96%, 100% 0, 100% 100%, 0 100%);  /*Задание формы*/
 }
-.mainWrapper, .aboutWrapper, .reviewWrapper, .areUReadyWrapper{
+.mainWrapper, .aboutWrapper, .reviewWrapper, .areUReadyWrapper, .footerWrapper{
     width: 100%;
     height: 100%;
     background-color: #2A2A2D;
+    position: relative;
+}
+.footerWrapper{
+    width: 100%;
+    height: 50%;
 }
 /* .mainWrapper{
     background-color: #2A2A2D;
@@ -350,12 +356,153 @@
     color: #000;
 }
 .cardForm{
-    width: 33%;
-    height: 70%;
+    width: 30%;
+    height: 75%;
     border-radius: 5px;
     background-color: #F6F6F6;
     position: absolute;
     right: 90px;
-    bottom: 40px;
+    bottom: 70px;
     box-shadow: -2px 2px 10px #757575;
+    padding: 0 20px;
+}
+.cardForm p{  
+    color: #000;
+    font-weight: 900;
+    padding: 20px 0;
+    font-size: 1em;
+}
+.cardForm input{
+    width: 95%;
+    height: 40px;
+    font-size: 1em;
+    padding-left: 15px;
+    display: flex;
+    justify-content: center;
+    border-radius: 3px;
+    border: #b5b5b5 0.5px solid;
+}
+.cardForm textarea{
+    width: 93%;
+    font-size: 1em;
+    padding: 12px;
+    border-radius: 3px;
+    border: #b5b5b5 0.5px solid;
+}
+.cardForm input[type=submit]{
+    width: 100%;
+    height: 50px;
+    font-weight: 900;
+    position: relative;
+    top: 40px;
+    background-color: #FFD300;
+    border-style: none;
+}
+.areUReady img{
+    height: 65%;
+    width: auto;
+    position: absolute;
+    bottom: 40px;
+}
+.footer{
+    width: auto;
+    height: 80%;
+    margin: 0 5%;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+    padding: 35px 25px;
+}
+.footer > p{
+    font-size: 2em;
+    padding-bottom: 20px;
+    font-weight: 900;
+}
+.telephones p{
+    position: relative;
+    padding-bottom: 5px;
+}
+.socialBlock{
+    position: relative;
+    top: 70px;
+}
+.social a {
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    float: left;
+    background: #fff;
+    /* border: 1px solid #ccc; */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1);
+    border-radius: 100%;
+    margin: 0 10px 10px 0;
+    padding: 6px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    /* font-size: 0.8em; */
+}
+.vk a{
+    background-color: #0078FF;
+}
+.instagram a{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+.telegram a{
+    background-color: #00A1DD;
+    font-size: 0.8em;
+}
+.whatsapp a{
+    background-color: #00D05D;
+}
+.facebook a{
+    background-color: #007BF9;
+}
+.cardThanks{
+    position: absolute;
+    top:25%;
+    left: 35%;
+    width: 400px;
+    height: 200px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: -11px 7px 7px 3px rgba(34, 60, 80, 0.3), 11px 7px 7px 1px rgba(34, 60, 80, 0.3) ;
+    font-size: 1.5em;
+    font-weight: 900;
+    text-align: center; 
+    padding: 50px 20px;
+    opacity: 0;
+}
+.cardThanks p{
+    color: #000;
+    font-size: 0.5em;
+    position: relative;
+    top: 20px;
+}
+.exit{
+    cursor: pointer; 
+    position: absolute; 
+    top: 30px; 
+    right: 40px;
+}
+.exit:before,.exit:after {
+    content: ""; 
+    position: absolute; 
+    width: 24px; 
+    height: 2px; 
+    background: rgb(0, 0, 0);
+}
+.exit:before {transform: rotate(45deg);}
+.exit:after {transform: rotate(-45deg);}
+
+.submitCard{
+    position: relative;
+    bottom: -60px;
+    margin: 0 auto;
+    width: 110px;
+    height: 80px;
+    background-color: #FDCB37;
+    shape-outside: polygon(0 50%, 12.5% 33.3%, 37.5% 66.6%, 87.5% 0, 100% 16.65%, 37.5% 100%);  /*Задание формы*/
+    clip-path: polygon(0 50%, 12.5% 33.3%, 37.5% 66.6%, 87.5% 0, 100% 16.65%, 37.5% 100%);  /*Задание формы*/
 }
