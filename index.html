@@ -143,7 +143,10 @@
                 <img src="images/RUReady.png" alt="">
             </div>
             <div class="cardThanks" id="cardThanks">
-                <div class="exit" onclick="closeMe()"></div>
+                <div class="closeBtn" onclick="closeMe()">
+                    <div class="exit"></div>
+                </div>
+                
                 <h2>Спасибо!</h2>
                 <p>Ваша заявка отправлена.<br> Ожидайте звонка нашего специалиста!</p>
                 <div class="submitCard"></div>
@@ -181,11 +184,11 @@
     <script>
         function showMe(){
             let cardThanks = document.getElementById("cardThanks");
-            cardThanks.style.opacity = "1";
+            cardThanks.style.zIndex = "0";
         }
         function closeMe(){
             let cardThanks = document.getElementById("cardThanks");
-            cardThanks.style.opacity = "0";
+            cardThanks.style.zIndex = "-1";
         }
 
         // Найти все ссылки начинающиеся на #

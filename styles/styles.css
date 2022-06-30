@@ -472,7 +472,7 @@
     font-weight: 900;
     text-align: center; 
     padding: 50px 20px;
-    opacity: 0;
+    z-index: -1;
 }
 .cardThanks p{
     color: #000;
@@ -480,15 +480,19 @@
     position: relative;
     top: 20px;
 }
-.exit{
+.closeBtn{
     cursor: pointer; 
-    position: absolute; 
     top: 30px; 
-    right: 40px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    position: absolute; 
 }
 .exit:before,.exit:after {
     content: ""; 
     position: absolute; 
+    right: 0px;
+    top: 10px;
     width: 24px; 
     height: 2px; 
     background: rgb(0, 0, 0);
