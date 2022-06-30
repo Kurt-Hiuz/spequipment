@@ -1,50 +1,361 @@
 *{
     padding: 0;
     margin: 0;
+    z-index: 2;
+    font-family: 'Montserrat', sans-serif;
+}
+::-webkit-scrollbar-button{
+    background-image: url('');
+    background-repeat: no-repeat;
+    width:5px;
+    height:0px;
+}
+    
+::-webkit-scrollbar-track {
+    background-color:#232323; /*цвет для фона*/
+}
+    
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 50%;
+    border-radius: 5px;
+    background-color:#464646; /*цвет для ползунка без :hover*/
+}
+    
+::-webkit-scrollbar-thumb:hover{
+    background-color: #686868; /*цвет для ползунка с :hover*/
+}
+    
+::-webkit-resizer{
+    background-image:url('');
+    background-repeat:no-repeat;
+    width:4px;
+    height:0px;
+}
+    
+::-webkit-scrollbar{
+    width: 10px;
 }
 .wrapper{
     width: 100%;
     height: 100vh;
 }
-.mainWrapper{
-    width: 100%;
+.main{
+    width: auto;
     height: 100%;
     background: linear-gradient(to top, rgba(255, 255, 255, 0.0), rgba(0, 0, 1, 0.7)), url(../images/mainBackground.jpeg);
     background-repeat: no-repeat;
+    background-position: top;
     background-size: 100% 100%;
-}
-.header{
-    width: 100%;
-    height: 13.65%;
-}
-.header ul{
-    display: flex;
-    margin-left: 6.25%;
-    /* justify-content: space-around;
-    align-items: center; */
+    margin: 0 5%;
     position: relative;
-    list-style-type: none;
-    top: 50%;
 }
-.header ul li{
-    margin: 0 10%;
-}
-.header ul li:nth-child(1){
-    margin-left: 0;
-}
-.header ul li:last-child{
-    margin-right: 0;
+.headerMain{
+    width: 100%;
+    height: 20.65%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .headerLink{
     color:white;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-size: 36;
+    font-size: 1.2em;
     position: relative;
     right: 0px;
 }
-.aboutWrapper{
+.infoMain{
+    width: 45%;
+    height: 45%;
+    position: absolute;
+    bottom: 15%;
+    left: 5%;
+}
+.infoMain h3, p{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+.infoMain p{
+    padding-top: 20px;
+    font-weight: 50;
+    letter-spacing: 1px;
+    font-family: 'Montserrat';
+}
+.infoMain h3{
+    font-weight: 900;
+    font-size: 2.5em;
+    letter-spacing: 3px;
+}
+.call{
+    width: 25%;
+    padding: 10px;
+    position: relative;
+    top: 30px;
+    left: 20px;
+    background-color: #FAD336;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 0.8em;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shape{
+    width: 100%;
+    height: 18.2%;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    shape-outside: polygon(0 0, 50% 96%, 100% 0, 100% 100%, 0 100%);  /*Задание формы*/
+    clip-path: polygon(0 0, 50% 96%, 100% 0, 100% 100%, 0 100%);  /*Задание формы*/
+}
+.mainWrapper, .aboutWrapper, .reviewWrapper, .areUReadyWrapper{
     width: 100%;
     height: 100%;
-    background-color: rgb(148, 255, 127);
+    background-color: #2A2A2D;
+}
+/* .mainWrapper{
+    background-color: #2A2A2D;
+}
+.aboutWrapper{
+    background-color: #2A2A2D;
+} */
+
+.about{
+    width: auto;
+    height: 100%;
+    margin: 0 5%;
+    font-family: 'Montserrat', sans-serif;
+}
+.numbers, .rent{
+    width: 100%;
+    height: 50%;
+}
+.numbers{
+    background-color: white;
+}
+.headerNumbers, .headerRent{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.headerNumbers p, .headerRent p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-style: normal;
+    text-decoration: none;
+    line-height: 3em;
+    letter-spacing: 0px;
+}
+.infoNumbers{
+    height: 50%;
+    width: 80%;
+    margin: 40px 10%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.blockInfo{
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+.blockInfoNumber{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: #000 2px solid;
+    font-size: 5em;
+    font-weight: 900;
+    color: #000;
+}
+.last{
+    border-style: none;
+}
+.blockInfoText{
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 900;
+    color: #000;
+}
+.dash{
+    width: 15%;
+    height: 5px;
+    background-color: #FFC400;
+}
+.rent{
+    background-color: #E8E8E8;
+}
+.infoRent{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.cardTechnic{
+    width: 30%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.blockTechnic{
+    height: 60%;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.blockTechnic img{
+    height: 100%;
+    width: auto;
+}
+.textTechnic{
+    font-family: 'Montserrat', sans-serif;
+    color: #000;
+    font-size: 1.2em;
+    font-weight: 900;
+}
+.review{
+    height: 100%;
+    width: 90%;
+    margin: 0 5%;
+    background-color: white;
+}
+.reviewHeader{
+    width: auto;
+    height: 25%;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.reviewHeader p{
+    color: black;
+    font-size: 2.2em;
+    font-weight: 900;
+}
+.reviews{
+    height: 75%;
+    width: 100%;
+    position: relative;
+}
+.cardReview{
+    width: 30%;
+    height: 180px;
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+}
+.cardReview:nth-child(1){
+    margin-left: 110px;
+}
+.cardReview:nth-child(2){
+    position: absolute;
+    right: 120px;
+}
+.cardReviewHeader{
+    /* background-color: #FAD336; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 25%;
+    width: 100%;
+    font-size: 1.3em;
+    font-weight: 900;
+}
+.assay{
+    height: 25%;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: flex-start;
+}
+.assay img{
+    height: 20px;
+    width: auto;
+    margin-right: 10px;
+}
+.textCard{
+    height: auto;
+    width: 100%;
+    font-size: 0.9em;
+    /* background-color: blue; */
+}
+.bluer{
+    filter: blur(2px);
+    width: 35%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+.bluer img{
+    height: 250px;
+    width: auto;
+    position: relative;
+    bottom:-50px;
+    left: -20px;
+    transform: rotate(-15deg);
+    z-index: 1;
+}
+.areUReady{
+    width: auto;
+    height: 100%;
+    margin: 0 5%;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #E8E8E8;
+    z-index: 0;
+}
+.shapAreUReady{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #FFD300;
+    shape-outside: polygon(0 0, 100% 0, 100% 95%, 0 33.3%, 0 0);  /*Задание формы*/
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 33.3%, 0 0);  /*Задание формы*/
+}
+.areUReadyHeader{
+    width: 50%;
+    height: 30%;
+    position: absolute;
+    left: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.areUReadyHeader{
+    font-size: 2em;
+    font-weight: 900;
+}
+.areUReadyHeader p{
+    margin-top: 20px;
+    font-size: 0.5em;
+    font-weight: 300;
+    color: #000;
+}
+.cardForm{
+    width: 33%;
+    height: 70%;
+    border-radius: 5px;
+    background-color: #F6F6F6;
+    position: absolute;
+    right: 90px;
+    bottom: 40px;
+    box-shadow: -2px 2px 10px #757575;
 }
